@@ -2,23 +2,20 @@
 
 int search(int* arr, int n, int target){
     int left = 0;
-    int right = n;
+    int right = n - 1;
     int middle = 0;
     while (left <= right){
         middle = (left + right)/2;
 
         if (arr[middle] < target){
-            // left = middle + 1;
-            left = middle;
+            left = middle + 1;
         }
         
         else if (arr[middle] > target){
-            right = middle;
-            // right = middle - 1;
+            right = middle - 1;
         }
         
         else if (arr[middle] = target){
-            // printf("target is %d\n", middle);
             return middle;
         }
     }
